@@ -18,12 +18,5 @@ jobs:
       if: github.event.action == 'opened'
       with:
         project: 'https://github.com/IamDum/NationalBank/projects/2'
+        column_name: 'Backlog'
 
-    - name: Assign issues and pull requests with `bug` label to project 3
-      uses: srggrs/assign-one-project-github-action@1.2.1
-      if: |
-        contains(github.event.issue.labels.*.name, 'bug') ||
-        contains(github.event.pull_request.labels.*.name, 'bug')
-      with:
-        project: 'https://github.com/srggrs/assign-one-project-github-action/projects/3'
-        column_name: 'Labeled'
